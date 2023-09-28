@@ -1,0 +1,65 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background: url(bg.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#title {
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 10vh;
+    line-height: 1vh;
+    color: gold;
+    text-shadow: 1vh 1vh #000;
+    padding-top: 10vh;
+}
+
+#title-font {
+    margin-top: 0;
+}
+
+#cykg {
+    display: block;
+    margin: auto;
+    height: 34vh;
+    border-radius: 1vh;
+    box-shadow: 0 0 10vh 1vh rgb(80, 0, 80);
+    cursor: pointer;
+}
+
+audio {
+    display: block;
+    margin: auto;
+    margin-top: 1vh;
+    height: 6vh;
+    width: 30vh;
+}
+
+button {
+    display: block;
+    width: 24vh;
+    height: 8vh;
+    margin: auto;
+    margin-top: 8vh;
+    padding: 0.8vh;
+    color: orange;
+    background-color: white;
+    border: 0.5vh solid gold;
+    border-radius: 1vh;
+    font-size: 3vh;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: gold;
+    color: white;
+    box-shadow: 0 2vh 4vh 0 rgba(0, 0, 0, 0.5);
+}

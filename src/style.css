@@ -16,7 +16,8 @@ body {
     font-size: 10vh;
     line-height: 1vh;
     color: gold;
-    text-shadow: 1vh 1vh #000;
+    text-shadow: 0.4rem 0.4rem rgb(128, 0, 128),
+                 0.4rem 0.4rem 1.2rem rgb(128, 0, 128);
     padding-top: 10vh;
 }
 
@@ -36,9 +37,9 @@ body {
 audio {
     display: block;
     margin: auto;
-    margin-top: 1vh;
+    margin-top: 2vh;
     height: 6vh;
-    width: 30vh;
+    width: 36vh;
 }
 
 button {
@@ -61,5 +62,5 @@ button {
 button:hover {
     background-color: gold;
     color: white;
-    box-shadow: 0 2vh 4vh 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2vh 4vh 0 rgba(80, 0, 80, 0.6);
 }

@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-Hans-CN">
     <head>
+        <script>
+            const month = new Date().getMonth();
+            if(month < 3) location.href = "/newyr.html"
+        </script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CYKG.FUN</title>
         <link href="https://fonts.loli.net/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="src/style.css" />
         <link rel="icon" href="src/favicon.ico" />
-        <script>
-            document.onload = () => {
-                const month = new Date().getMonth();
-                if(month < 3) location.href = "/newyr.html"
-            }
-        </script>
     </head>
 
     <body>

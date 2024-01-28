@@ -5,7 +5,7 @@ html {
 body {
     margin: 0;
     height: 100%;
-    background: url(bg.png) no-repeat;
+    background: url(bgny.png) no-repeat;
     background-size: cover;
     background-position: center center;
 }
@@ -16,13 +16,19 @@ body {
     font-size: 10vh;
     line-height: 1vh;
     color: gold;
-    text-shadow: 0.4rem 0.4rem rgb(128, 0, 128),
-                 0.4rem 0.4rem 1.2rem rgb(128, 0, 128);
-    padding-top: 10vh;
+    text-shadow: 0.4rem 0.4rem rgb(128, 0, 0),
+                 0.4rem 0.4rem 1.2rem rgb(128, 0, 0);
+    padding-top: 8vh;
 }
 
 #title-font {
-    margin-top: 0;
+    margin-top: auto;
+}
+
+#font {
+    margin-top: -1vh;
+    font-size: 6vh;
+    font-weight: bolder;
 }
 
 #cykg {
@@ -30,7 +36,7 @@ body {
     margin: auto;
     height: 34vh;
     border-radius: 1vh;
-    box-shadow: 0 0 10vh 1vh rgb(80, 0, 80);
+    box-shadow: 0 0 10vh 1vh rgb(80, 0, 0);
     cursor: pointer;
 }
 
@@ -62,5 +68,5 @@ button {
 button:hover {
     background-color: gold;
     color: white;
-    box-shadow: 0 2vh 4vh 0 rgba(80, 0, 80, 0.6);
+    box-shadow: 0 2vh 4vh 0 rgba(80, 0, 0, 0.6);
 }

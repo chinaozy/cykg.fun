@@ -16,7 +16,7 @@ body {
     font-size: 10vh;
     line-height: 1vh;
     color: gold;
-    text-shadow: 0.4rem 0.4rem rgb(128, 0, 128),
+    text-shadow: 0.4rem 0.4rem #800080,
                  0.4rem 0.4rem 1.2rem rgb(128, 0, 128);
     padding-top: 10vh;
 }

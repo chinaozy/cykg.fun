@@ -2,8 +2,9 @@
 <html lang="zh-Hans-CN">
     <head>
         <script>
-            const month = new Date().getMonth();
-            if(month < 3) location.href = "/newyr.html"
+            const date = new Date();
+            if(date.getMonth() < 2) location.href = "/newyr.html"
+            if(date.getMonth() == 2 || date.getDate() == 10) location.href = "/birth.html"
         </script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

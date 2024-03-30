@@ -1,35 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh-Hans-CN">
-    <head>
-        <script>
-            const date = new Date();
-            if(date.getMonth() < 2) location.href = "/newyr.html"
-            if(date.getMonth() == 2 || date.getDate() == 10) location.href = "/birth.html"
 
-        </script>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CYKG.FUN</title>
-        <link href="https://fonts.loli.net/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="src/style.css" />
-        <link rel="icon" href="src/favicon.ico" />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYKG.FUN</title>
+    <script>
+        const date = new Date();
+        if (date.getMonth() < 2) { location.href = "/newyr.html" }
+        else
+            if (date.getMonth() == 2 && date.getDate() == 10) { location.href = "/birth.html" }
+            else location.href = "/main.html"
+    </script>
+</head>
 
-    <body>
-        <div id="title">
-            <p id="title-font">CYKG</p>
-            <p id="title-font">.FUN</p>
-        </div>
-        <img id="cykg" src="src/cykg.png" onclick="playAudio()" alt="丛雨KG" height="400vh" />
-        <audio id="audio" controls loop metadata src="src/slbk.mp3"></audio>
-        <button onclick='location.href=("https://space.cykg.fun")'>进入主站</button>
+<body>
 
-        <script>
-            document.body.setAttribute('style', 'background: url(src/bg.png) no-repeat;background-size: cover;background-position: center center;')
-            const audio = document.getElementById("audio");
-            function playAudio() {
-                audio.play();
-            }
-        </script>
-    </body>
+</body>
+
 </html>

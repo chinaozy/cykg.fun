@@ -1,0 +1,128 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+#title {
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 10vh;
+    line-height: 1vh;
+    color: gold;
+    text-shadow: 0.4rem 0.4rem #800080,
+                 0.4rem 0.4rem 1.2rem rgb(128, 0, 128);
+    padding-top: 10vh;
+}
+
+#title-font {
+    margin-top: 0;
+}
+
+#cykg {
+    display: block;
+    margin: auto;
+    height: 34vh;
+    border-radius: 1vh;
+    box-shadow: 0 0 10vh 1vh rgb(80, 0, 80);
+    cursor: pointer;
+}
+
+audio {
+    display: block;
+    margin: auto;
+    margin-top: 2vh;
+    height: 6vh;
+    width: 36vh;
+}
+
+button {
+    display: inline-block;
+    width: 18vh;
+    height: 8vh;
+    margin: auto;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    margin-top: 6vh;
+    padding: 0.8vh;
+    color: orange;
+    background-color: white;
+    border: 0.5vh solid gold;
+    border-radius: 1vh;
+    font-size: 2.6vh;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: gold;
+    color: white;
+    box-shadow: 0 2vh 4vh 0 rgba(80, 0, 80, 0.6);
+}
+
+#floatPanel {
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 1vh;
+    box-shadow: 0 0.5vh 1vh 0 #22005d1f;
+    background-color: #E1DCD6;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#floatPanel[expand] {
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    width: 21vh;
+    height: 4vh;
+    border-radius: 1vh;
+    box-shadow: 0 1vh 2vh 0 #22005d48;
+    background-color: #E1DCD6
+}
+
+#menuBtn {
+    float: left;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(icons/menu.svg) ;
+    background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+#menuBtn[expand] {
+    background-image: url(icons/close.svg) ;
+}
+
+.menu-items {
+    opacity: 0;
+    display: inline-block;
+    width: 5vh;
+    height: 4vh;
+    text-align: center;
+    font-size: 1.6vh;
+    line-height: 4vh;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: default;
+}
+
+.menu-items[expand] {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.menu-items:hover {
+    background-color: #0000002a;
+}

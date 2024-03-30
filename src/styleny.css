@@ -5,9 +5,10 @@ html {
 body {
     margin: 0;
     height: 100%;
-    background: url(bgny.png) no-repeat;
+    background: url(bgs/bgny.png) no-repeat;
     background-size: cover;
     background-position: center center;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 #title {
@@ -49,10 +50,12 @@ audio {
 }
 
 button {
-    display: block;
-    width: 24vh;
+    display: inline-block;
+    width: 18vh;
     height: 8vh;
     margin: auto;
+    margin-left: 1vh;
+    margin-right: 1vh;
     margin-top: 6vh;
     padding: 0.8vh;
     color: orange;
@@ -69,4 +72,64 @@ button:hover {
     background-color: gold;
     color: white;
     box-shadow: 0 2vh 4vh 0 rgba(80, 0, 0, 0.6);
+}
+
+#floatPanel {
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 1vh;
+    box-shadow: 0 0.5vh 1vh 0 #22005d1f;
+    background-color: #E1DCD6;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#floatPanel[expand] {
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    width: 21vh;
+    height: 4vh;
+    border-radius: 1vh;
+    box-shadow: 0 1vh 2vh 0 #22005d48;
+    background-color: #E1DCD6
+}
+
+#menuBtn {
+    float: left;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(icons/menu.svg) ;
+    background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+#menuBtn[expand] {
+    background-image: url(icons/close.svg) ;
+}
+
+.menu-items {
+    opacity: 0;
+    display: inline-block;
+    width: 5vh;
+    height: 4vh;
+    text-align: center;
+    font-size: 1.6vh;
+    line-height: 4vh;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: default;
+}
+
+.menu-items[expand] {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.menu-items:hover {
+    background-color: #0000002a;
 }

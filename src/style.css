@@ -5,24 +5,40 @@ html {
 body {
     margin: 0;
     height: 100%;
-    
+    background: url(bgs/bg.svg) no-repeat;
     background-size: cover;
     background-position: center center;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
+
+#body[dark] {
+    background-image: url(bgs/bgdark.svg);
+}
+
 
 #title {
     text-align: center;
     font-family: Orbitron;
     font-size: 10vh;
     line-height: 1vh;
-    color: gold;
-    text-shadow: 0.4rem 0.4rem #800080,
-                 0.4rem 0.4rem 1.2rem rgb(128, 0, 128);
+    font-style: oblique;
+    color:#E1DCD6;
+    text-shadow: 0.4rem 0.4rem #66746B,
+                 0.4rem 0.4rem 1.2rem #22005daf;
     padding-top: 10vh;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#title[dark] {
+    color:#7a757f;
+    text-shadow: 0.4rem 0.4rem #22005d,
+                 0.4rem 0.4rem 1.2rem #22005daf;
 }
 
 #title-font {
     margin-top: 0;
+    padding-right: 2vh;
 }
 
 #cykg {
@@ -30,8 +46,13 @@ body {
     margin: auto;
     height: 34vh;
     border-radius: 1vh;
-    box-shadow: 0 0 10vh 1vh rgb(80, 0, 80);
+    box-shadow: 0 0 10vh 1vh #22005d70;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#cykg[dark] {
+    filter: brightness(80%);
 }
 
 audio {
@@ -43,24 +64,142 @@ audio {
 }
 
 button {
-    display: block;
-    width: 24vh;
-    height: 8vh;
+    display: inline-block;
+    width: 18vh;
+    height: 10vh;
     margin: auto;
+    margin-left: 1vh;
+    margin-right: 1vh;
     margin-top: 6vh;
     padding: 0.8vh;
-    color: orange;
-    background-color: white;
-    border: 0.5vh solid gold;
-    border-radius: 1vh;
+    color: #66746B;
+    background-color: #E1DCD6;
+    border: 0.5vh solid #E1DCD6;
+    box-shadow: 0 0.5vh 1vh 0 #22005d1f;
+    border-radius: 2vh;
     font-size: 3vh;
     font-weight: bold;
     transition-duration: 0.2s;
     cursor: pointer;
+
 }
 
 button:hover {
-    background-color: gold;
+    background-color: #66746B;
+    border: 0.5vh solid #66746B;
     color: white;
-    box-shadow: 0 2vh 4vh 0 rgba(80, 0, 80, 0.6);
+    box-shadow: 0 1vh 2vh 0 #22005d48;
+}
+
+button[dark]:hover{
+    background-color: #7a757f;
+    border: 0.5vh solid #7a757f;
+    color: #eae4f3;
+    box-shadow: 0 1vh 2vh 0 #22005d48;
+}
+
+button[dark]{
+    background-color: #4A4458;
+    border: 0.5vh solid #4A4458;
+    color: #948F99;
+}
+
+#floatPanel {
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 1vh;
+    box-shadow: 0 0.5vh 1vh 0 #22005d1f;
+    background-color: #E1DCD6;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#floatPanel[dark]{
+    background-color: #4A4458;
+    color: #948F99;
+}
+
+#darkModeBtn {
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 1vh;
+    box-shadow: 0 0.5vh 1vh 0 #22005d1f;
+    background-color: #E1DCD6;
+    background-image: url(icons/light_mode.svg) ;
+    background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+
+#darkModeBtn[dark] {
+    background-color: #4A4458;
+    background-image: url(icons/dark_mode.svg);
+}
+
+#floatPanel[expand] {
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    width: 21vh;
+    height: 4vh;
+    border-radius: 1vh;
+    box-shadow: 0 1vh 2vh 0 #22005d48;
+    background-color: #E1DCD6
+}
+
+#floatPanel[dark][expand] {
+    background-color: #4A4458;
+}
+
+#menuBtn {
+    float: left;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(icons/menu.svg) ;
+    background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+#menuBtn[dark] {
+    background-image: url(icons/menu_dark.svg) ;
+}
+
+#menuBtn[expand] {
+    background-image: url(icons/close.svg) ;
+}
+
+#menuBtn[dark][expand] {
+    background-image: url(icons/close_dark.svg) ;
+}
+
+.menu-items {
+    opacity: 0;
+    display: inline-block;
+    width: 5vh;
+    height: 4vh;
+    text-align: center;
+    font-size: 1.6vh;
+    line-height: 4vh;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: default;
+}
+
+.menu-items[expand] {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.menu-items:hover {
+    background-color: #0000002a;
 }

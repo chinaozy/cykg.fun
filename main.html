@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CYKG.FUN</title>
+        <link href="https://fonts.loli.net/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="src/style.css" />
+        <link rel="icon" href="src/favicon.ico" />
+    </head>
+
+    <body class="theme" id="body">
+        <div class="theme" id="title">
+            <p id="title-font">CYKG</p>
+            <p id="title-font">.FUN</p>
+        </div>
+        <img class="theme" id="cykg" src="src/media/cykg.png" onclick="playAudio()" alt="丛雨KG" height="400vh" />
+        <audio id="audio" controls loop metadata src="src/media/slbk.mp3"></audio>
+        <div style="width: fit-content; margin: auto;">
+            <button class="theme" onclick='location.href=("https://space.cykg.fun")'>进入空间</button>
+            <button class="theme" onclick='location.href=("https://games.cykg.fun")'>KG游戏</button>
+        </div>
+
+        <div class="theme menu" id="floatPanel" style="white-space: nowrap;" >
+            <div class="theme menu" id="menuBtn" onclick="menuExpand()"></div>
+            <div class="theme menu menu-items" onclick="jumpTo('/classic.html')">经典</div>
+            <div class="theme menu menu-items" onclick="jumpTo('/newyr.html')">新年</div>
+            <div class="theme menu menu-items" onclick="jumpTo('/birth.html')">生日</div>
+        </div>
+        
+        <div class="theme" id="darkModeBtn" onclick="switchMode()"></div>
+
+        <script>
+            const elements = document.getElementsByClassName('theme');
+            var darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if(darkMode){
+                for(i=0;i<elements.length;i++){
+                        elements[i].setAttribute("dark","");
+                }
+            }
+
+            //preload images
+            window.onload = function() {  
+                setTimeout(function() {  
+                    new Image().src = "src/icons/dark_mode.svg";
+                    new Image().src = "src/icons/menu_dark.svg";
+                    new Image().src = "src/icons/close_dark.svg";
+                    new Image().src = "src/bgs/bgdark.svg";
+                }, 1000);  
+            };
+
+            const audio = document.getElementById("audio");
+            const darkModeBtn = document.getElementById("darkModeBtn");
+            const menuElements = document.getElementsByClassName('menu');
+            var menuExpanded = false;
+
+            function menuExpand(){
+                if(menuExpanded){
+                    for(i=0;i<menuElements.length;i++){
+                        menuElements[i].removeAttribute("expand");
+                    }
+                }else{
+                    for(i=0;i<menuElements.length;i++){
+                        menuElements[i].setAttribute("expand","");
+                    }
+                }
+                menuExpanded = !menuExpanded;
+            }
+
+            function switchMode(){
+                if(darkMode){
+                    for(i=0;i<elements.length;i++){
+                        elements[i].removeAttribute("dark");
+                    }
+                }else{ 
+                    for(i=0;i<elements.length;i++){
+                        elements[i].setAttribute("dark","");
+                    }
+                }
+                darkMode = !darkMode;
+            }
+
+            function jumpTo(url){
+                if(menuExpand) location.href = url;
+            }
+
+            function playAudio() {
+                audio.play();
+            }
+        </script>
+    </body>
+</html>

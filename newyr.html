@@ -31,6 +31,13 @@
     </div>
 
     <script>
+        //preload images
+        window.onload = function () {
+            setTimeout(function () {
+                new Image().src = "src/icons/close.svg";
+            }, 1000);
+        };
+
         const audio = document.getElementById("audio");
         function playAudio() {
             audio.play();
@@ -53,7 +60,7 @@
         }
 
         function jumpTo(url) {
-            if (menuExpand) location.href = url;
+            if (menuExpanded) location.href = url;
         }
     </script>
 </body>

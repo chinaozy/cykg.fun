@@ -54,7 +54,7 @@
         <button class="theme" onclick='location.href=("https://games.cykg.fun")'>KG游戏</button>
     </div>
 
-    <div class="theme menu" id="floatPanel" style="white-space: nowrap;" >
+    <div class="theme menu" id="floatPanel" style="white-space: nowrap;">
         <div class="theme menu" id="menuBtn" onclick="menuExpand()"></div>
         <div class="theme menu menu-items" onclick="jumpTo('/main.html')">现代</div>
         <div class="theme menu menu-items" onclick="jumpTo('/classic.html')">经典</div>
@@ -62,6 +62,13 @@
     </div>
 
     <script>
+        //preload images
+        window.onload = function () {
+            setTimeout(function () {
+                new Image().src = "src/icons/close.svg";
+            }, 1000);
+        };
+
         const menuElements = document.getElementsByClassName('menu');
         var menuExpanded = false;
 
@@ -79,7 +86,7 @@
         }
 
         function jumpTo(url) {
-            if (menuExpand) location.href = url;
+            if (menuExpanded) location.href = url;
         }
     </script>
 </body>

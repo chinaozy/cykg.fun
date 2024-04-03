@@ -1,60 +1,68 @@
 <!DOCTYPE html>
 <html lang="zh-Hans-CN">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CYKG.FUN</title>
-        <link href="https://fonts.loli.net/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="src/stylecls.css" />
-        <link rel="icon" href="src/favicon.ico" />
-    </head>
 
-    <body>
-        <div id="title">
-            <p id="title-font">CYKG</p>
-            <p id="title-font">.FUN</p>
-        </div>
-        <img id="cykg" src="src/media/cykg.png" onclick="playAudio()" alt="丛雨KG" height="400vh" />
-        <audio id="audio" controls loop metadata src="src/media/slbk.mp3"></audio>
-        <div style="width: fit-content; margin: auto;">
-            <button class="theme" onclick='location.href=("https://space.cykg.fun")'>进入空间</button>
-            <button class="theme" onclick='location.href=("https://games.cykg.fun")'>KG游戏</button>
-        </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CYKG.FUN</title>
+    <link href="https://fonts.loli.net/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="src/stylecls.css" />
+    <link rel="icon" href="src/favicon.ico" />
+</head>
 
-        <div class="theme menu" id="floatPanel" style="white-space: nowrap;" >
-            <div class="theme menu" id="menuBtn" onclick="menuExpand()"></div>
-            <div class="theme menu menu-items" onclick="jumpTo('/main.html')">现代</div>
-            <div class="theme menu menu-items" onclick="jumpTo('/newyr.html')">新年</div>
-            <div class="theme menu menu-items" onclick="jumpTo('/birth.html')">生日</div>
-        </div>
+<body>
+    <div id="title">
+        <p id="title-font">CYKG</p>
+        <p id="title-font">.FUN</p>
+    </div>
+    <img id="cykg" src="src/media/cykg.png" onclick="playAudio()" alt="丛雨KG" height="400vh" />
+    <audio id="audio" controls loop metadata src="src/media/slbk.mp3"></audio>
+    <div style="width: fit-content; margin: auto;">
+        <button class="theme" onclick='location.href=("https://space.cykg.fun")'>进入空间</button>
+        <button class="theme" onclick='location.href=("https://games.cykg.fun")'>KG游戏</button>
+    </div>
 
-        <script>
-            document.body.setAttribute('style', 'background: url(src/bgs/bg.png) no-repeat;background-size: cover;background-position: center center;')
-            const audio = document.getElementById("audio");
-            function playAudio() {
-                audio.play();
-            }
+    <div class="theme menu" id="floatPanel" style="white-space: nowrap;">
+        <div class="theme menu" id="menuBtn" onclick="menuExpand()"></div>
+        <div class="theme menu menu-items" onclick="jumpTo('/main.html')">现代</div>
+        <div class="theme menu menu-items" onclick="jumpTo('/newyr.html')">新年</div>
+        <div class="theme menu menu-items" onclick="jumpTo('/birth.html')">生日</div>
+    </div>
 
-            const menuElements = document.getElementsByClassName('menu');
-            var menuExpanded = false;
+    <script>
+        //preload images
+        window.onload = function () {
+            setTimeout(function () {
+                new Image().src = "src/icons/close.svg";
+            }, 1000);
+        };
+        document.body.setAttribute('style', 'background: url(src/bgs/bg.png) no-repeat;background-size: cover;background-position: center center;')
+        const audio = document.getElementById("audio");
+        function playAudio() {
+            audio.play();
+        }
 
-            function menuExpand(){
-                if(menuExpanded){
-                    for(i=0;i<menuElements.length;i++){
-                        menuElements[i].removeAttribute("expand");
-                    }
-                }else{
-                    for(i=0;i<menuElements.length;i++){
-                        menuElements[i].setAttribute("expand","");
-                    }
+        const menuElements = document.getElementsByClassName('menu');
+        var menuExpanded = false;
+
+        function menuExpand() {
+            if (menuExpanded) {
+                for (i = 0; i < menuElements.length; i++) {
+                    menuElements[i].removeAttribute("expand");
                 }
-                menuExpanded = !menuExpanded;
+            } else {
+                for (i = 0; i < menuElements.length; i++) {
+                    menuElements[i].setAttribute("expand", "");
+                }
             }
+            menuExpanded = !menuExpanded;
+        }
 
-            function jumpTo(url){
-                if(menuExpand) location.href = url;
-            }
+        function jumpTo(url) {
+            if (menuExpanded) location.href = url;
+        }
 
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>

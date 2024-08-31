@@ -45,8 +45,10 @@
         const noticeBadge = document.getElementById('notice');
         if (window.location.host != "cykg.fun") {
             cykgdotfun = false;
+        } else {
+            cykgdotfun = true;
             noticeBadge.style.display = 'block';
-        } else { cykgdotfun = true; }
+        }
         const host = window.location.host.split('.').slice(-2).join('.');
 
         const elements = document.getElementsByClassName('theme');

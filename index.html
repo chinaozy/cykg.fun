@@ -3,14 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CYKG.FUN</title>
     <script>
         const date = new Date();
-        if (date.getMonth() < 2) { location.href = "https://"+window.location.host+"/newyr.html" }
-        else
-            if (date.getMonth() == 2 && date.getDate() == 10) { location.href = "https://"+window.location.host+"/birth.html" }
-            else location.href = "https://"+window.location.host+"/main.html"
+        if (date.getMonth() < 2) {
+            location.href = "https://" + location.host + "/newyr.html";
+        }
+        else if (date.getMonth() == 2 && date.getDate() == 10) {
+            location.href = "https://" + location.host + "/birth.html";
+        }
+        else location.href = "https://" + location.host + "/main.html";
     </script>
 </head>
 

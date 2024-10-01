@@ -50,15 +50,15 @@
     <video id="vid" src="src/media/birth.mp4" controls></video>
 
     <div style="width: fit-content; margin: auto;">
-        <button class="theme" onclick='location.href=("https://space.cykg.fun")'>进入空间</button>
-        <button class="theme" onclick='location.href=("https://games.cykg.fun")'>KG游戏</button>
+        <button class="theme" onclick="jumpTo('space')">进入空间</button>
+        <button class="theme" onclick="jumpTo('games')">KG游戏</button>
     </div>
 
     <div class="theme menu" id="floatPanel" style="white-space: nowrap;">
         <div class="theme menu" id="menuBtn" onclick="menuExpand()"></div>
-        <div class="theme menu menu-items" onclick="jumpTo('/main.html')">现代</div>
-        <div class="theme menu menu-items" onclick="jumpTo('/classic.html')">经典</div>
-        <div class="theme menu menu-items" onclick="jumpTo('/newyr.html')">新年</div>
+        <div class="theme menu menu-items" onclick="menuJumpTo('/main.html')">现代</div>
+        <div class="theme menu menu-items" onclick="menuJumpTo('/classic.html')">经典</div>
+        <div class="theme menu menu-items" onclick="menuJumpTo('/newyr.html')">新年</div>
     </div>
 
     <script>
@@ -85,8 +85,18 @@
             menuExpanded = !menuExpanded;
         }
 
-        function jumpTo(url) {
-            if (menuExpanded) location.href = url;
+        function jumpTo(tag) {
+            if (location.hostname == "cykg.451419.xyz") {
+                location.href = "https://" + tag + '-cykg.451419.xyz';
+            } else if (location.hostname == "web.archive.org") {
+                location.href = "https://" + tag + '.cykg.fun';
+            } else {
+                location.href = "https://" + tag + '.' + location.host;
+            }
+        }
+
+        function menuJumpTo(url) {
+            if (menuExpanded) location.href = "https://" + location.host + url;
         }
     </script>
 </body>

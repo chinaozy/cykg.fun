@@ -11,13 +11,6 @@
 </head>
 
 <body class="theme" id="body">
-    <div id="notice" onclick="removeBadge()">
-        <p> 通知：
-            <span style="font-weight: bolder;color:purple">cykg.fun</span>
-            域名将于2024年9月末过期，大家明年再会！
-        </p>
-        <p>归档地址：<a style="font-weight: bolder;color:purple" href="https://cykg.451419.xyz/">cykg.451419.xyz</a></p>
-    </div>
 
     <div class="theme" id="title">
         <p id="title-font">CYKG</p>
@@ -26,31 +19,20 @@
     <img class="theme" id="cykg" src="src/media/cykg.png" onclick="playAudio()" alt="丛雨KG" height="400vh" />
     <audio id="audio" controls loop metadata src="src/media/slbk.mp3"></audio>
     <div style="width: fit-content; margin: auto;">
-        <button class="theme"
-            onclick='location.href=(cykgdotfun?"https://space.cykg.fun":"https://space-cykg."+host)'>进入空间</button>
-        <button class="theme"
-            onclick='location.href=(cykgdotfun?"https://games.cykg.fun":"https://games-cykg."+host)'>KG游戏</button>
+        <button class="theme" onclick="jumpTo('space')">进入空间</button>
+        <button class="theme" onclick="jumpTo('games')">KG游戏</button>
     </div>
 
     <div class="theme menu" id="floatPanel" style="white-space: nowrap;">
         <div class="theme menu" id="menuBtn" onclick="menuExpand()"></div>
-        <div class="theme menu menu-items" onclick="jumpTo('/classic.html')">经典</div>
-        <div class="theme menu menu-items" onclick="jumpTo('/newyr.html')">新年</div>
-        <div class="theme menu menu-items" onclick="jumpTo('/birth.html')">生日</div>
+        <div class="theme menu menu-items" onclick="menuJumpTo('/classic.html')">经典</div>
+        <div class="theme menu menu-items" onclick="menuJumpTo('/newyr.html')">新年</div>
+        <div class="theme menu menu-items" onclick="menuJumpTo('/birth.html')">生日</div>
     </div>
 
     <div class="theme" id="darkModeBtn" onclick="switchMode()"></div>
 
     <script>
-        const noticeBadge = document.getElementById('notice');
-        if (window.location.host != "cykg.fun") {
-            cykgdotfun = false;
-        } else {
-            cykgdotfun = true;
-            noticeBadge.style.display = 'block';
-        }
-        const host = window.location.host.split('.').slice(-2).join('.');
-
         const elements = document.getElementsByClassName('theme');
         var darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (darkMode) {
@@ -73,7 +55,7 @@
         const audio = document.getElementById("audio");
         const darkModeBtn = document.getElementById("darkModeBtn");
         const menuElements = document.getElementsByClassName('menu');
-        var menuExpanded = false;
+        menuExpanded = false;
 
         function menuExpand() {
             if (menuExpanded) {
@@ -101,17 +83,24 @@
             darkMode = !darkMode;
         }
 
-        function jumpTo(url) {
-            if (menuExpanded) location.href = url;
+        function jumpTo(tag) {
+            if (location.hostname == "cykg.451419.xyz") {
+                location.href = "https://" + tag + '-cykg.451419.xyz';
+            } else if (location.hostname == "web.archive.org") {
+                location.href = "https://" + tag + '.cykg.fun';
+            } else {
+                location.href = "https://" + tag + '.' + location.host;
+            }
+        }
+
+        function menuJumpTo(url) {
+            if (menuExpanded) location.href = "https://" + location.host + url;
         }
 
         function playAudio() {
             audio.play();
         }
 
-        function removeBadge() {
-            noticeBadge.style.opacity = 0;
-        }
     </script>
 </body>
 
